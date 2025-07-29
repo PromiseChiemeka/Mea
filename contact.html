@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact via WhatsApp</title>
+  <link rel="stylesheet" href="whatsapp.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+ <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FAF7F3;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">Mea</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: flex-end;">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="services.html">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About Us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    </div>
+  <div class="message-center"> 
+        <div class="whatsapp-form">
+          <h2>Send us a message</h2>
+          <input type="text" id="name" placeholder="Your name" required>
+          <textarea id="message" placeholder="Your message" required></textarea>
+          <button onclick="sendToWhatsApp()">Send on WhatsApp</button>
+    </div>
+
+<script>
+  function sendToWhatsApp() {
+    const name = document.getElementById("name").value;
+    const message = document.getElementById("message").value;
+
+    // Replace with your actual WhatsApp number (no +, no spaces)
+    const phone = "+23407065303071";
+
+    // Create and encode message
+    const text = `Hello, my name is ${name}. ${message}`;
+    const encodedText = encodeURIComponent(text);
+
+    // Open WhatsApp in a new tab
+    const url = `https://wa.me/${phone}?text=${encodedText}`;
+    window.open(url, "_blank");
+  }
+</script>
+  </div>
+   <!-- Footer section  -->
+<div class="footer">
+  <div class="footer-section">
+ <h2>Mea</h2>
+  </div>
+
+  <div class="footer-section">
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:meaas.aesthetic@gmail.com">meaas.aesthetic@gmail.com</a></p>
+  </div>
+
+  <div class="footer-section">
+    <h3>Follow Us</h3>
+    <p>Instagram: <a href="https://instagram.com/meas_aesthtetic" target="_blank">@meas_aesthtetic</a></p>
+    <p>TikTok: <a href="https://tiktok.com/@meas_aesthtetics" target="_blank">@meas_aesthtetics</a></p>
+    <p>Facebook: <a href="https://facebook.com/MeasAesthetics" target="_blank">Mea's Aesthetics</a></p>
+  </div>
+
+  <div class="footer-section">
+    <h3>Quick Links</h3>
+    <p><a href="about.html">About Us</a></p>
+    <p><a href="services.html">Services</a></p>
+    <p><a href="contact.html">Contact Us</a></p>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Mea's Aesthetics. All rights reserved.</p>
+  </div>
+</div>
+</body>
+</html>
